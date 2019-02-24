@@ -19,6 +19,12 @@ class StrCalcTestCase(unittest.TestCase):
         self.assertEqual(str_calc("14,21"), 35)
         self.assertEqual(str_calc("21,14"), 35)
 
+    def test_two_nums_newline(self):
+        self.assertEqual(str_calc("1\n3"), 4)
+        self.assertEqual(str_calc("3\n1"), 4)
+        self.assertEqual(str_calc("14\n21"), 35)
+        self.assertEqual(str_calc("21\n14"), 35)
+
 
 if __name__ == "__main__":
     unittest.main()
