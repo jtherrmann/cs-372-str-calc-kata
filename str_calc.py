@@ -1,4 +1,13 @@
 def str_calc(s):
+    return sum(map(to_num, num_strs(s)))
+
+
+def num_strs(s):
+    s, delim = get_str_delim_pair(s)
+    return s.replace(delim, " ").split()
+
+
+def get_str_delim_pair(s):
     lines = s.split("\n")
     if lines[0][:2] == "//":
         delim = lines[0][2:]
@@ -8,9 +17,7 @@ def str_calc(s):
         s = "".join(lines[1:])
     else:
         delim = ","
-
-    nums = s.replace(delim, " ").split()
-    return sum(map(to_num, nums))
+    return s, delim
 
 
 def to_num(s):
