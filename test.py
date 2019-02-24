@@ -11,7 +11,6 @@ class StrCalcTestCase(unittest.TestCase):
     def test_single_num(self):
         self.assertEqual(str_calc("0"), 0)
         self.assertEqual(str_calc("123"), 123)
-        self.assertEqual(str_calc("-123"), -123)
 
     def test_two_nums_comma(self):
         self.assertEqual(str_calc("1,3"), 4)
@@ -32,6 +31,22 @@ class StrCalcTestCase(unittest.TestCase):
     def test_three_nums_newline(self):
         self.assertEqual(str_calc("1\n3\n8"), 12)
         self.assertEqual(str_calc("12\n5\n20"), 37)
+
+    def test_negative_nums(self):
+        with self.assertRaises(ValueError):
+            str_calc("-123")
+        with self.assertRaises(ValueError):
+            str_calc("1,-5")
+        with self.assertRaises(ValueError):
+            str_calc("1\n-5")
+        with self.assertRaises(ValueError):
+            str_calc("1,5,-2")
+        with self.assertRaises(ValueError):
+            str_calc("-1,5")
+        with self.assertRaises(ValueError):
+            str_calc("1\n5\n-2")
+        with self.assertRaises(ValueError):
+            str_calc("-1\n5")
 
 
 if __name__ == "__main__":
