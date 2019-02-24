@@ -48,6 +48,13 @@ class StrCalcTestCase(unittest.TestCase):
         with self.assertRaises(ValueError):
             str_calc("-1\n5")
 
+    def test_over_1000(self):
+        self.assertEqual(str_calc("1000"), 1000)
+        self.assertEqual(str_calc("1001"), 0)
+        self.assertEqual(str_calc("981273"), 0)
+        self.assertEqual(str_calc("203,123871123"), 203)
+        self.assertEqual(str_calc("43\n9812739\n8"), 51)
+
 
 if __name__ == "__main__":
     unittest.main()
