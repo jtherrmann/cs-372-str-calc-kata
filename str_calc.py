@@ -1,2 +1,2 @@
 def str_calc(s):
-    pass
+    return 0 if s == "" else None
