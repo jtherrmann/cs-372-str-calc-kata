@@ -9,7 +9,7 @@ def str_calc(s):
     elif "\n" in s:
         assert "," not in s
         nums = s.split("\n")
-        assert len(nums) == 2
+        assert len(nums) in (2, 3)
         result = sum(map(int, nums))
     else:
         result = int(s)
