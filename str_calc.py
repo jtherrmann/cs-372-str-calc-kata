@@ -1,2 +1,6 @@
 def str_calc(s):
-    return 0 if s == "" else int(s)
+    if s == "":
+        return 0
+    nums = s.split(",")
+    assert len(nums) in (1, 2)
+    return sum(map(int, nums))
