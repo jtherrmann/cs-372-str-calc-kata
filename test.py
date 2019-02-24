@@ -59,6 +59,10 @@ class StrCalcTestCase(unittest.TestCase):
         self.assertEqual(str_calc("//#\n100#5#33"), 138)
         self.assertEqual(str_calc("//!\n123!52"), 175)
 
+    def test_define_multi_char_delim(self):
+        self.assertEqual(str_calc("//[abc]\n100abc5abc33"), 138)
+        self.assertEqual(str_calc("//[!!!!cc@]\n123!!!!cc@52"), 175)
+
 
 if __name__ == "__main__":
     unittest.main()
