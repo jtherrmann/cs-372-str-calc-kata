@@ -4,7 +4,7 @@ def str_calc(s):
     elif "," in s:
         assert "\n" not in s
         nums = s.split(",")
-        assert len(nums) == 2
+        assert len(nums) in (2, 3)
         result = sum(map(int, nums))
     elif "\n" in s:
         assert "," not in s
