@@ -9,7 +9,11 @@ def str_calc(s):
         lines = s.split("\n")
         if lines[0][:2] == "//":
             assert len(lines) == 2
-            nums = lines[1].split(lines[0][2])
+            delim = lines[0][2:]
+            if len(delim) > 1:
+                assert delim[0] == "[" and delim[-1] == "]"
+                delim = delim[1:-1]
+            nums = lines[1].split(delim)
         else:
             nums = lines
         assert len(nums) in (2, 3)
