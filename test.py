@@ -13,6 +13,12 @@ class StrCalcTestCase(unittest.TestCase):
         self.assertEqual(str_calc("123"), 123)
         self.assertEqual(str_calc("-123"), -123)
 
+    def test_two_nums_comma(self):
+        self.assertEqual(str_calc("1,3"), 4)
+        self.assertEqual(str_calc("3,1"), 4)
+        self.assertEqual(str_calc("14,21"), 35)
+        self.assertEqual(str_calc("21,14"), 35)
+
 
 if __name__ == "__main__":
     unittest.main()
