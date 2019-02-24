@@ -55,6 +55,10 @@ class StrCalcTestCase(unittest.TestCase):
         self.assertEqual(str_calc("203,123871123"), 203)
         self.assertEqual(str_calc("43\n9812739\n8"), 51)
 
+    def test_define_single_char_delim(self):
+        self.assertEqual(str_calc("//#\n100#5#33"), 138)
+        self.assertEqual(str_calc("//!\n123!52"), 175)
+
 
 if __name__ == "__main__":
     unittest.main()
