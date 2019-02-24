@@ -25,6 +25,10 @@ class StrCalcTestCase(unittest.TestCase):
         self.assertEqual(str_calc("14\n21"), 35)
         self.assertEqual(str_calc("21\n14"), 35)
 
+    def test_three_nums_comma(self):
+        self.assertEqual(str_calc("1,3,8"), 12)
+        self.assertEqual(str_calc("12,5,20"), 37)
+
 
 if __name__ == "__main__":
     unittest.main()
