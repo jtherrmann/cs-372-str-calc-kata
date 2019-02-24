@@ -20,4 +20,4 @@ def to_num(s):
     n = int(s)
     if n < 0:
         raise ValueError()
-    return n
+    return n if n <= 1000 else 0
