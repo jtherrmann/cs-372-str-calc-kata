@@ -2,13 +2,16 @@ def str_calc(s):
     if s == "":
         result = 0
     elif "," in s:
-        assert "\n" not in s
         nums = s.split(",")
         assert len(nums) in (2, 3)
         result = sum(map(to_num, nums))
     elif "\n" in s:
-        assert "," not in s
-        nums = s.split("\n")
+        lines = s.split("\n")
+        if lines[0][:2] == "//":
+            assert len(lines) == 2
+            nums = lines[1].split(lines[0][2])
+        else:
+            nums = lines
         assert len(nums) in (2, 3)
         result = sum(map(to_num, nums))
     else:
